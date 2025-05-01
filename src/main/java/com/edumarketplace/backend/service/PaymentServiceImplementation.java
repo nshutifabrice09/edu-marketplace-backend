@@ -7,8 +7,9 @@ import java.util.List;
 
 @Service
 public class PaymentServiceImplementation implements PaymentService{
+
     @Override
-    public List<Payment> getPayments() {
+    public List<Payment> getAllPayments() {
         return null;
     }
 
