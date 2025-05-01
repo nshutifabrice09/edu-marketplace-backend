@@ -27,7 +27,7 @@ public class Session {
     private LocalDateTime endTime;
 
     @Enumerated(EnumType.STRING)
-    private SessionStatus status; 
+    private SessionStatus status;
 
     @OneToOne
     private Payment payment;
