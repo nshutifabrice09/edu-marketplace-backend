@@ -15,6 +15,7 @@ import java.util.List;
 public class Tutor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String bio;
     private double hourlyRate;
 

@@ -1,2 +1,7 @@
-package com.edumarketplace.backend.repository;public interface StudentRepository {
+package com.edumarketplace.backend.repository;
+
+import com.edumarketplace.backend.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRepository extends JpaRepository <Student, Long> {
 }
