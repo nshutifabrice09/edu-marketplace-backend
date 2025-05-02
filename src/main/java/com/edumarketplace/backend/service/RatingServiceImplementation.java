@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RatingServiceImplementation extends RatingService{
+public class RatingServiceImplementation implements RatingService{
     @Override
     public List<Rating> getAllRatings() {
         return null;
