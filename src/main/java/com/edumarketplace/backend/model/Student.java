@@ -14,6 +14,7 @@ import java.util.List;
 public class Student extends User{
     @OneToMany(mappedBy = "student")
     private List<Session> sessions;
+    private String student_id;
 
     @OneToMany(mappedBy = "student")
     private List<Rating> ratings;
