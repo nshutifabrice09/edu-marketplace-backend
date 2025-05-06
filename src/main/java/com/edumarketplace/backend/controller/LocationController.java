@@ -18,13 +18,21 @@ public class LocationController {
         this.locationService = locationService;
     }
 
+    @GetMapping("/locations")
+    public List<Location> locationList(){
+        return locationService.getAllLocations();
+    }
+
+    @GetMapping("/location/{id}")
+    public Location getLocationById(@PathVariable ("id") Long id){
+        return locationService.getLocationById(id);
+    }
+
     @PostMapping("/location")
     public Location saveLocation(@RequestBody Location location){
         return locationService.saveLocation(location);
     }
 
-    @GetMapping("/locations")
-    public List<Location> locationList(){
-        return locationService.getAllLocations();
-    }
+
+
 }

@@ -18,13 +18,21 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
+    @GetMapping("payments")
+    public List<Payment> paymentList(){
+        return paymentService.getAllPayments();
+    }
+
+    @GetMapping("/payment/{id}")
+    public Payment getPaymentById(@PathVariable ("id") Long id){
+        return paymentService.getPaymentById(id);
+    }
+
     @PostMapping("payment")
     public Payment savePayment(@RequestBody Payment payment){
         return paymentService.savePayment(payment);
     }
 
-    @GetMapping("payments")
-    public List<Payment> paymentList(){
-        return paymentService.getAllPayments();
-    }
+
+
 }

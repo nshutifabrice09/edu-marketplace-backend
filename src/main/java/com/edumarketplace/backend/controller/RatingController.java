@@ -17,13 +17,21 @@ public class RatingController {
     public RatingController(RatingService ratingService){
         this.ratingService = ratingService;
     }
-    @PostMapping("rating")
-    public Rating saveRating(@RequestBody Rating rating){
-        return ratingService.saveRating(rating);
-    }
 
     @GetMapping("/ratings")
     public List<Rating> ratingList(){
         return ratingService.getAllRatings();
     }
+
+    @GetMapping("/rating/{id}")
+    public Rating getRatingById(@PathVariable ("id") Long id){
+        return ratingService.getRatingById(id);
+    }
+
+    @PostMapping("rating")
+    public Rating saveRating(@RequestBody Rating rating){
+        return ratingService.saveRating(rating);
+    }
+
+
 }
