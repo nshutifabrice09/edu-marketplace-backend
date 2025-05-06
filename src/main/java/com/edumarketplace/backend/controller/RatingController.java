@@ -3,10 +3,7 @@ package com.edumarketplace.backend.controller;
 import com.edumarketplace.backend.model.Rating;
 import com.edumarketplace.backend.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class RatingController {
         this.ratingService = ratingService;
     }
     @PostMapping("rating")
-    public Rating saveRating(Rating rating){
+    public Rating saveRating(@RequestBody Rating rating){
         return ratingService.saveRating(rating);
     }
 

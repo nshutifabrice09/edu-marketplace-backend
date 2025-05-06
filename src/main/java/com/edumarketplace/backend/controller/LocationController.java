@@ -3,10 +3,7 @@ package com.edumarketplace.backend.controller;
 import com.edumarketplace.backend.model.Location;
 import com.edumarketplace.backend.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class LocationController {
     }
 
     @PostMapping("/location")
-    public Location saveLocation(Location location){
+    public Location saveLocation(@RequestBody Location location){
         return locationService.saveLocation(location);
     }
 

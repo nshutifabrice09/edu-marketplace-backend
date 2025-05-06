@@ -3,10 +3,7 @@ package com.edumarketplace.backend.controller;
 import com.edumarketplace.backend.model.Session;
 import com.edumarketplace.backend.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class SessionController {
     }
 
     @PostMapping("/session")
-    public Session saveSession(Session session){
+    public Session saveSession( @RequestBody Session session){
         return sessionService.saveSession(session);
     }
 
