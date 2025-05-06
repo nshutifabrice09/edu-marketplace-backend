@@ -26,7 +26,7 @@ public class TutorController {
         return tutorService.getAllTutors();
     }
 
-    @GetMapping("/tutur/{id}")
+    @GetMapping("/tutor/{id}")
     public Tutor getTutorById(@PathVariable ("id") Long id){
         return tutorService.getTutorById(id);
     }
