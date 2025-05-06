@@ -33,6 +33,9 @@ public class SessionController {
         return sessionService.saveSession(session);
     }
 
-
+    @PutMapping("/update/session/{id}")
+    public Session updateSession(@PathVariable ("id") Long id, @RequestBody Session session){
+        return sessionService.updateSession(id, session);
+    }
 
 }

@@ -2,6 +2,7 @@ package com.edumarketplace.backend.controller;
 
 import com.edumarketplace.backend.model.Subject;
 import com.edumarketplace.backend.service.SubjectService;
+import org.hibernate.boot.jaxb.hbm.spi.SubEntityInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,11 @@ public class SubjectController {
     @PostMapping("/subject")
     public Subject saveSubject(@RequestBody Subject subject){
         return subjectService.saveSubject(subject);
+    }
+
+    @PutMapping("/update/subject/{id}")
+    public Subject updateSubject(@PathVariable ("id") Long id, @RequestBody Subject subject){
+        return subjectService.updateSubject(id, subject);
     }
 
 
