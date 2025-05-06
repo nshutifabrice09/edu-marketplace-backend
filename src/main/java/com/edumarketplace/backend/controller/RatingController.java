@@ -33,5 +33,10 @@ public class RatingController {
         return ratingService.saveRating(rating);
     }
 
+    @PutMapping("/update/rating/{id}")
+    public Rating updateRating(@PathVariable ("id") Long id, @RequestBody Rating rating){
+        return ratingService.updateRating(id, rating);
+    }
+
 
 }
