@@ -18,13 +18,20 @@ public class SubjectController {
         this.subjectService = subjectService;
     }
 
+    @GetMapping("/subject/{id}")
+    public Subject getSubjectById(@PathVariable ("id") Long id){
+        return subjectService.getSubjectById(id);
+    }
+
     @GetMapping("/subjects")
     public List <Subject> subjectList(){
         return subjectService.getAllSubjects();
     }
 
-    @GetMapping("/subject/{id}")
-    public Subject getSubjectById(@PathVariable ("id") Long id){
-        return subjectService.getSubjectById(id);
+    @PostMapping("/subject")
+    public Subject saveSubject(@RequestBody Subject subject){
+        return subjectService.saveSubject(subject);
     }
+
+
 }

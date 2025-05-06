@@ -18,14 +18,21 @@ public class SessionController {
         this.sessionService = sessionService;
     }
 
+    @GetMapping("/sessions")
+    public List<Session> sessionList(){
+        return sessionService.getAllSessions();
+    }
+
+    @GetMapping("/session/{id}")
+    public Session getSessionById(@PathVariable ("id") Long id){
+        return sessionService.getSessionById(id);
+    }
+
     @PostMapping("/session")
     public Session saveSession( @RequestBody Session session){
         return sessionService.saveSession(session);
     }
 
-    @GetMapping("/sessions")
-    public List<Session> sessionList(){
-        return sessionService.getAllSessions();
-    }
+
 
 }
